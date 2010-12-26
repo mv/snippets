@@ -1,0 +1,81 @@
+# Global snippets
+
+# (c) holds no legal value ;)
+snippet c)
+	Copyright `&enc[:2] == "utf" ? "©" : "(c)"` `strftime("%Y")` ${1:`g:snips_author`}. All Rights Reserved.${2}
+
+snippet fheader
+	#!${3}
+	#
+	# `expand('%:t')`
+	# Description: ${1:Description:}
+	#
+	#     Usage: ${2:usage}
+	#
+	# `g:snips_author`
+	# `strftime("%Y-%m")`
+	#
+
+snippet by
+	# ${1:`g:snips_author`}
+	# `strftime("%Y-%m")`
+	#
+
+snippet mod
+	#
+	# vim:ft=${1:`expand('%:e')`}:tw=78:ts=4:sts=4:sw=4:nowrap:et:
+	#
+
+snippet modtab
+	#
+	# vim:ft=${1:`expand('%:e')`}:tw=78:ts=4:sts=4:sw=4:nowrap:noet:
+	#
+
+snippet date
+	`strftime("%Y-%m-%d")`
+
+snippet date24
+	`strftime("%Y-%m-%d %H:%M")`
+
+snippet date24s
+	`strftime("%Y-%m-%d %H:%M:%S")`
+
+snippet date_24
+	`strftime("%Y-%m-%d_%H%M")`
+
+snippet date_24s
+	`strftime("%Y-%m-%d_%H%M%S")`
+
+snippet iso
+	"%Y-%m-%d"
+
+snippet iso24
+	"%Y-%m-%d %H:%M"
+
+snippet iso24s
+	"%Y-%m-%d %H:%M:%S"
+
+snippet iso_24
+	"%Y-%m-%d_%H%M"
+
+snippet iso_24s
+	"%Y-%m-%d_%H%M%S"
+
+snippet mypathname
+	`expand('%:p')`
+
+snippet mybasename
+	`expand('%:t')`
+
+snippet mydirname
+	`expand('%:p:h')`/
+
+
+### Scrooloose
+### Ref:
+snippet modeline
+	`Snippet_Modeline()`
+
+snippet lorem
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
