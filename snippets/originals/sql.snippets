@@ -1,0 +1,104 @@
+
+snippet sel
+	  SELECT ${1:*}
+	       , ${2}
+	    FROM ${3:table_name}
+	       , ${4}
+	   WHERE 1=1
+	     AND 2=2
+	ORDER BY 1
+	       , 2
+	       ;
+
+snippet selg
+	  SELECT ${1:*}
+	       , ${2}
+	       , COUNT(${3:1})
+	    FROM ${4:table_name}
+	       , ${5}
+	   WHERE 1=1
+	     AND 2=2
+	GROUP BY 1
+	       , 2
+	ORDER BY 1
+	       , 2
+	       ;
+
+snippet upd
+	  UPDATE ${1:table_name}
+	     SET ${2:col1} = ${3:val1}
+	       , ${4:col1} = ${5:val1}
+	   WHERE 1=1
+	     AND 2=2
+	       ;
+
+snippet del
+	  DELETE ${1:table_name}
+	   WHERE 1=1
+	     AND 2=2
+	       ;
+
+snippet ins
+	  INSERT INTO ${1:table_name}
+	       ( ${2:col1}
+	       , ${3:col2}
+	       )
+	 VALUES( ${4}
+	       , ${5}
+	       )
+	       ;
+
+snippet cr_table
+	create table ${1:table_name}
+	( ${2:column_name}			int
+	, ${3:column_name}			int
+	);
+
+snippet cr_index
+	create index ${1:idx_name} ON ${2:table_name}(${3:column_name});
+
+# MySQL
+snippet dfymd24
+	  date_format( ${1:column_name}, '%Y-%m-%d %H:%M:%S')
+
+snippet dfymd
+	  date_format( ${1:column_name}, '%Y-%m-%d')
+
+snippet dfym
+	  date_format( ${1:column_name}, '%Y-%m')
+
+snippet cr_database
+	create database ${1:db_name} ;
+	grant all on $1.* to ${2:username}@'127.0.0.1' identified by '${3:password}';
+	grant all on $1.* to ${2}@'localhost' identified by '${3}';
+	revoke drop on $1 from $2@'127.0.0.1';
+	revoke drop on $1 from $2@'localhost';
+
+# Oracle
+snippet tcymd24
+	TO_CHAR( ${1:column_name}, 'yyyy-mm-dd HH24:MM:SS')
+
+snippet tcymd
+	TO_CHAR( ${1:column_name}, 'yyyy-mm-dd')
+
+snippet tcym
+	TO_CHAR( ${1:column_name}, 'yyyy-mm')
+
+snippet cr_tablespace
+	CREATE TABLESPACE ${1:tbspc_name}
+	    DATAFILE '${2:ddf_name}'
+	        SIZE 4G
+	    AUTOEXTEND ON NEXT 100M MAXSIZE 20G
+	    ;
+
+snippet cr_user
+	create user ${1:username}
+		IDENTIFIED BY ${2:password}
+		DEFAULT TABLESPACE ${3:tbspc_name}
+		TEMPORARY TABLESPACE TEMP;
+	;
+	alter user $1
+		quota unlimited on $2
+		quota unlimited on $3
+	;
+
