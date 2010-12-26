@@ -1,0 +1,3 @@
+[submodule "scrooloose-snippets"]
+	path = scrooloose-snippets
+	url = https://github.com/scrooloose/snipmate-snippets.git
