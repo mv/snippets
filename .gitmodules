@@ -1,3 +1,6 @@
 [submodule "scrooloose-snippets"]
 	path = scrooloose-snippets
 	url = https://github.com/scrooloose/snipmate-snippets.git
+[submodule "spf13-snippets"]
+	path = spf13-snippets
+	url = https://github.com/spf13/snipmate-snippets.git
