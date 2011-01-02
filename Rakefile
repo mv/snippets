@@ -10,6 +10,7 @@ task :deploy => ["snippets_dir:purge"] do
   Dir.foreach(".") do |f|
     cp_r f, @snippets_dir, :verbose => true if f !~ /^[.]/
   end
+  system "git log -1 > #{@snippets_dir}/RELEASE.txt"
 end
 
 namespace :snippets_dir do
